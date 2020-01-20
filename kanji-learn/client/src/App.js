@@ -1,27 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
-import HiraTile from './Components/Hiragana-Tile';
+import Home from './Pages/Home';
+import Easy from './Pages/Easy';
+import Int from './Pages/Intermediate';
+import Diff from './Pages/Difficult';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <HiraTile />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/beginner' component={Easy} />
+          <Route exact path='/intermediate' component={Int} />
+          <Route exact path='/difficult' component={Diff} />
+        </Switch>
+    </Router>
   );
 }
 

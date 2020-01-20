@@ -1,8 +1,8 @@
 import React from 'react';
 
-export function HiraTile(props) {
+export default function HiraTile(props) {
 
     return (
-        <div>TEST</div>
+        <div></div>
     )
 }
