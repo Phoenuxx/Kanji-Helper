@@ -2,11 +2,12 @@ html, body {
   height: 100%;
   width: 100%;
   color: white;
+  background-color: rgba(0, 0, 0, 0.795);
 }
 
 .diff-btn {
-  margin: auto;
-  
+  margin: 5px auto -5px auto;
+  width: 100%;
 }
 
 .test {
