@@ -1,8 +1,9 @@
 import React from 'react';
 import Tile from '../Components/Tile';
+import User from '../Components/UserInput';
 
 const hiraKataArray = [
-//hiragana Chart
+  //hiragana Chart
   { sym: "あ", eng: 'a' }, { sym: 'い', eng: "i" }, { sym: 'う', eng: "u" }, { sym: 'え', eng: "e" }, { sym: 'お', eng: "o" },
   { sym: 'か', eng: 'ka' }, { sym: 'き', eng: 'ki' }, { sym: 'く', eng: 'ku' }, { sym: 'け', eng: 'ke' }, { sym: 'こ', eng: 'ko' },
   { sym: 'さ', eng: 'sa' }, { sym: 'し', eng: 'shi' }, { sym: 'す', eng: 'su' }, { sym: 'せ', eng: 'se' }, { sym: 'そ', eng: 'so' },
@@ -13,7 +14,7 @@ const hiraKataArray = [
   { sym: 'や', eng: 'ya' }, { sym: 'ゆ', eng: 'yu' }, { sym: 'よ', eng: 'yo' },
   { sym: 'ら', eng: 'ra' }, { sym: 'り', eng: 'ri' }, { sym: 'る', eng: 'ru' }, { sym: 'れ', eng: 're' }, { sym: 'ろ', eng: 'ro' },
   { sym: 'わ', eng: 'wa' }, { sym: 'を', eng: 'wo' }, { sym: 'ん', eng: 'n' },
-//katakana Char
+  //katakana Char
   { sym: 'ア', eng: 'a' }, { sym: 'イ', eng: 'i' }, { sym: 'ウ', eng: 'u' }, { sym: 'エ', eng: 'e' }, { sym: 'オ', eng: 'o' },
   { sym: 'カ', eng: 'ka' }, { sym: 'キ', eng: 'ki' }, { sym: 'ク', eng: 'ku' }, { sym: 'ケ', eng: 'ke' }, { sym: 'コ', eng: 'ko' },
   { sym: 'サ', eng: 'sa' }, { sym: 'シ', eng: 'shi' }, { sym: 'ス', eng: 'su' }, { sym: 'セ', eng: 'se' }, { sym: 'ソ', eng: 'so' },
@@ -25,15 +26,22 @@ const hiraKataArray = [
   { sym: 'ラ', eng: 'ra' }, { sym: 'リ', eng: 'ri' }, { sym: 'ル', eng: 'ru' }, { sym: 'レ', eng: 're' }, { sym: 'ロ', eng: 'ro' },
   { sym: 'ワ', eng: 'wa' }, { sym: 'ヲ', eng: 'wo' }, { sym: 'ン', eng: 'n' }];
 
+
+  let currentSym = hiraKataArray[Math.floor(Math.random() * hiraKataArray.length)];
+  let currentQuest = currentSym.sym
+  let currentAns = currentSym.eng;
+
+
+
 export default function easyPage() {
   return (
     <div className="App container-fluid">
-      <div className="row title">
+      <div className="row">
         <div className="col-3" />
         <h1 className="col-6 test">Beginner</h1>
         <div className="col-3" />
       </div>
-      <div className="row title">
+      <div className="row">
         <div className="col-3" />
         <h2 className="col-6 test">Type the sound for each Hiragana/Katakana that appears!</h2>
         <div className="col-3" />
@@ -41,7 +49,8 @@ export default function easyPage() {
       <div className="row">
         <div className="col-3" />
         <div className="col-6 test">
-          <Tile class="" question={hiraKataArray[0].sym} answer={hiraKataArray[0].eng}></Tile>
+          <Tile class="" id="tile" question={currentQuest} answer={currentAns}></Tile>
+          <User />
         </div>
         <div className="col-3" />
       </div>
