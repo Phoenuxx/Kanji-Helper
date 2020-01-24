@@ -4,8 +4,8 @@ export default function Difficulty(props) {
 
     return (
         <div className={props.class}>
-        <button className="diff-btn"><a href={props.src}>{props.difficulty}</a> </button>
-        <p>{props.descript}</p>
+        <a href={props.src}><button className="diff-btn">{props.difficulty}</button></a>
+         <p>{props.descript}</p>
         </div>
     );
 }

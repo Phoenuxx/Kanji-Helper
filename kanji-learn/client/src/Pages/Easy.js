@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Tile from '../Components/Tile';
 import User from '../Components/UserInput';
 
@@ -27,33 +27,96 @@ const hiraKataArray = [
   { sym: 'ワ', eng: 'wa' }, { sym: 'ヲ', eng: 'wo' }, { sym: 'ン', eng: 'n' }];
 
 
-  let currentSym = hiraKataArray[Math.floor(Math.random() * hiraKataArray.length)];
-  let currentQuest = currentSym.sym
-  let currentAns = currentSym.eng;
 
 
 
-export default function easyPage() {
-  return (
-    <div className="App container-fluid">
-      <div className="row">
-        <div className="col-3" />
-        <h1 className="col-6 test">Beginner</h1>
-        <div className="col-3" />
-      </div>
-      <div className="row">
-        <div className="col-3" />
-        <h2 className="col-6 test">Type the sound for each Hiragana/Katakana that appears!</h2>
-        <div className="col-3" />
-      </div>
-      <div className="row">
-        <div className="col-3" />
-        <div className="col-6 test">
-          <Tile class="" id="tile" question={currentQuest} answer={currentAns}></Tile>
-          <User />
+class easyPage extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentQuest: "",
+      currentAns: "",
+      userGuess: ""
+    }
+  }
+
+  pickSomething = () => {
+    let currentSym = hiraKataArray[Math.floor(Math.random() * hiraKataArray.length)];
+    this.setState({
+      currentQuest: currentSym.sym,
+      currentAns: currentSym.eng
+    });
+    console.log(currentSym.sym);
+    console.log(this.state);
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleFormSubmit = event => {
+    // Preventing the default behavior of the form submit
+    event.preventDefault();
+
+    if (this.state.userGuess === this.state.currentAns) {
+      alert("congrats")
+      this.pickSomething();
+    } else {
+      alert("try again")
+    }
+    // Clear `this.state.firstName` and `this.state.lastName`
+    this.setState({
+      userGuess: ""
+    });
+  
+  };
+
+  componentDidMount = () => {
+    let currentSym = hiraKataArray[Math.floor(Math.random() * hiraKataArray.length)];
+    this.setState({
+      currentQuest: currentSym.sym,
+      currentAns: currentSym.eng
+    });
+  }
+
+  render() {
+    return (
+      <div className="App container-fluid">
+        <div className="row">
+          <div className="col-3" />
+          <h1 className="col-6 test">Beginner</h1>
+          <div className="col-3" />
         </div>
-        <div className="col-3" />
-      </div>
+        <div className="row">
+          <div className="col-3" />
+          <h2 className="col-6 test">Type the sound for each Hiragana/Katakana that appears!</h2>
+          <div className="col-3" />
+        </div>
+        <div className="row">
+          <div className="col-3" />
+          <div className="col-6 test">
+            <Tile class="" id="tile" question={this.state.currentQuest}></Tile>
+            {/* <User answer={this.state.currentAns} handleInputChange={this.answerComparison}/> */}
+            <input
+              value={this.state.userGuess}
+              name="userGuess"
+              onChange={this.handleInputChange}
+              type="text"
+            />
+            <button onClick={this.handleFormSubmit}>Submit</button>
+          </div>
+          <div className="col-3" />
+        </div>
+      </div>);
+  };
+};
 
-    </div>);
-}
+
+
+export default easyPage;
