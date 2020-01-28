@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Tile from '../Components/Tile';
-import User from '../Components/UserInput';
 
 const hiraKataArray = [
   //hiragana Chart
@@ -8,7 +7,7 @@ const hiraKataArray = [
   { sym: 'か', eng: 'ka' }, { sym: 'き', eng: 'ki' }, { sym: 'く', eng: 'ku' }, { sym: 'け', eng: 'ke' }, { sym: 'こ', eng: 'ko' },
   { sym: 'さ', eng: 'sa' }, { sym: 'し', eng: 'shi' }, { sym: 'す', eng: 'su' }, { sym: 'せ', eng: 'se' }, { sym: 'そ', eng: 'so' },
   { sym: 'た', eng: 'ta' }, { sym: 'ち', eng: 'chi' }, { sym: 'つ', eng: 'tsu' }, { sym: 'て', eng: 'te' }, { sym: 'と', eng: 'to' },
-  { sym: 'な', eng: 'na' }, { sym: 'に', eng: 'ni' }, { sym: 'ぬ', eng: 'nu' }, { sym: 'ね', eng: 'nu' }, { sym: 'の', eng: 'nu' },
+  { sym: 'な', eng: 'na' }, { sym: 'に', eng: 'ni' }, { sym: 'ぬ', eng: 'nu' }, { sym: 'ね', eng: 'ne' }, { sym: 'の', eng: 'nu' },
   { sym: 'は', eng: 'ha' }, { sym: 'ひ', eng: 'hi' }, { sym: 'ふ', eng: 'fu' }, { sym: 'へ', eng: 'he' }, { sym: 'ほ', eng: 'ho' },
   { sym: 'ま', eng: 'ma' }, { sym: 'み', eng: 'mi' }, { sym: 'む', eng: 'mu' }, { sym: 'め', eng: 'me' }, { sym: 'も', eng: 'mo' },
   { sym: 'や', eng: 'ya' }, { sym: 'ゆ', eng: 'yu' }, { sym: 'よ', eng: 'yo' },
@@ -25,10 +24,6 @@ const hiraKataArray = [
   { sym: 'ヤ', eng: 'ya' }, { sym: 'ユ', eng: 'yu' }, { sym: 'ヨ', eng: 'yo' },
   { sym: 'ラ', eng: 'ra' }, { sym: 'リ', eng: 'ri' }, { sym: 'ル', eng: 'ru' }, { sym: 'レ', eng: 're' }, { sym: 'ロ', eng: 'ro' },
   { sym: 'ワ', eng: 'wa' }, { sym: 'ヲ', eng: 'wo' }, { sym: 'ン', eng: 'n' }];
-
-
-
-
 
 class easyPage extends Component {
 
@@ -78,11 +73,7 @@ class easyPage extends Component {
   };
 
   componentDidMount = () => {
-    let currentSym = hiraKataArray[Math.floor(Math.random() * hiraKataArray.length)];
-    this.setState({
-      currentQuest: currentSym.sym,
-      currentAns: currentSym.eng
-    });
+    this.pickSomething();
   }
 
   render() {
@@ -102,9 +93,8 @@ class easyPage extends Component {
           <div className="col-3" />
           <div className="col-6 test">
             <Tile class="" id="tile" question={this.state.currentQuest}></Tile>
-            {/* <User answer={this.state.currentAns} handleInputChange={this.answerComparison}/> */}
             <input
-              value={this.state.userGuess}
+              value={this.state.userGuess.toLowerCase().trim()}
               name="userGuess"
               onChange={this.handleInputChange}
               type="text"
