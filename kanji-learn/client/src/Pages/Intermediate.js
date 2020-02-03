@@ -5,13 +5,14 @@ const kanjiArray = [
     //hiragana Chart
       { sym: "何", eng: 'what', hira: 'nani' }
     , { sym: "家", eng: 'house', hira: 'ie' }
+    , { sym: "木", eng: 'tree', hira: 'き' }
     , { sym: "森", eng: 'forest', hira: 'もり' }
     , { sym: "緑", eng: 'green', hira: 'みどり' }
-    , { sym: "白い", eng: 'white', hira: 'しろい' }
+    , { sym: "白", eng: 'white', hira: 'しろ' }
     , { sym: "黒", eng: 'black', hira: 'くろ' }
     , { sym: "黄", eng: 'yellow', hira: 'き' }
     , { sym: "赤", eng: 'red', hira: 'あか' }
-    , { sym: "青い", eng: 'blue', hira: 'あおい' }
+    , { sym: "青", eng: 'blue', hira: 'あお' }
     , { sym: "私", eng: 'i', hira: 'わたし' }
     , { sym: "彼", eng: 'he', hira: 'かれ' }
     , { sym: "彼女", eng: 'she', hira: 'かのじょ' }
@@ -29,8 +30,50 @@ const kanjiArray = [
     , { sym: "牛肉", eng: 'beef', hira: 'ぎょにく' }
     , { sym: "鳥肉", eng: 'chicken', hira: 'とりにく' }
     , { sym: "魚肉", eng: 'fish', hira: 'ぎょにく' }
+    , { sym: "手", eng: 'hand', hira: 'て' }
+    , { sym: "右", eng: 'right', hira: 'みぎ' }
+    , { sym: "左", eng: 'left', hira: 'ひだり' }
+    , { sym: "一", eng: 'one', hira: 'いち' }
+    , { sym: "二", eng: 'two', hira: 'に' }
+    , { sym: "三", eng: 'three', hira: 'さん' }
+    , { sym: "四", eng: 'four', hira: 'よん' }
+    , { sym: "五", eng: 'five', hira: 'ご' }
+    , { sym: "六", eng: 'six', hira: 'ろく' }
+    , { sym: "七", eng: 'seven', hira: 'なな' }
+    , { sym: "八", eng: 'eight', hira: 'はち' }
+    , { sym: "九", eng: 'nine', hira: 'きゅ' }
+    , { sym: "十", eng: 'ten', hira: 'じゅ' }
+    , { sym: "百", eng: 'hundred', hira: 'ひゃく' }
+    , { sym: "千", eng: 'thousand', hira: 'せん' }
+    , { sym: "万", eng: 'ten thousand', hira: 'まん' }
+    , { sym: "苺", eng: 'strawberry', hira: 'いちご' }
+    , { sym: "後", eng: 'after', hira: 'あと' }
+    , { sym: "父", eng: 'dad', hira: 'ちち' }
+    , { sym: "母", eng: 'mom', hira: 'はは' }
+    , { sym: "仕事", eng: 'my job', hira: ' しごと' }
+    , { sym: "先生", eng: 'teacher', hira: 'せんせい' }
+    , { sym: "国", eng: 'country', hira: 'くに' }
+    , { sym: "家族", eng: 'family', hira: 'かぞく' }
+    , { sym: "本", eng: 'book', hira: 'ほん' }
+    , { sym: "車", eng: 'car', hira: 'くるま' }
+    , { sym: "駅", eng: 'station', hira: 'えき' }
+    , { sym: "英語", eng: 'english', hira: 'えいご' }
+    , { sym: "お茶 ", eng: 'tea', hira: 'おちゃ' }
+    , { sym: "水", eng: 'water', hira: 'みず' }
+    , { sym: "図書館 ", eng: 'library', hira: 'としょかん ' }
+    , { sym: "火", eng: 'fire', hira: 'ひ' }
+    , { sym: "禁止する", eng: 'prohibit', hira: 'きんしする' }
     //   , { sym: "", eng: '', hira: '' }
     //   , { sym: "", eng: '', hira: '' }
+    //   , { sym: "", eng: '', hira: '' }
+    //   , { sym: "", eng: '', hira: '' }
+    //   , { sym: "", eng: '', hira: '' }
+    //   , { sym: "", eng: '', hira: '' }
+    //   , { sym: "", eng: '', hira: '' }
+    //   , { sym: "", eng: '', hira: '' }
+    //   , { sym: "", eng: '', hira: '' }
+    //   , { sym: "", eng: '', hira: '' }
+ 
 ];
 
 
@@ -71,7 +114,7 @@ class interPage extends Component {
         // Preventing the default behavior of the form submit
         event.preventDefault();
 
-        if (this.state.userGuess === this.state.currentAns) {
+        if (this.state.userGuess.toLowerCase() === this.state.currentAns) {
             alert(this.state.currentHira)
             this.pickSomething();
         } else {
@@ -107,7 +150,7 @@ class interPage extends Component {
                         <Tile class="" id="tile" question={this.state.currentQuest}></Tile>
                         {/* <User answer={this.state.currentAns} handleInputChange={this.answerComparison}/> */}
                         <input
-                            value={this.state.userGuess.toLowerCase().trim()}
+                            value={this.state.userGuess}
                             name="userGuess"
                             onChange={this.handleInputChange}
                             type="text"

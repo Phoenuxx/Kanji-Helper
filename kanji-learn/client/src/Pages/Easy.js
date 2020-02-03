@@ -13,7 +13,7 @@ const hiraKataArray = [
   { sym: 'や', eng: 'ya' }, { sym: 'ゆ', eng: 'yu' }, { sym: 'よ', eng: 'yo' },
   { sym: 'ら', eng: 'ra' }, { sym: 'り', eng: 'ri' }, { sym: 'る', eng: 'ru' }, { sym: 'れ', eng: 're' }, { sym: 'ろ', eng: 'ro' },
   { sym: 'わ', eng: 'wa' }, { sym: 'を', eng: 'wo' }, { sym: 'ん', eng: 'n' },
-  //katakana Char
+  //katakana Chart
   { sym: 'ア', eng: 'a' }, { sym: 'イ', eng: 'i' }, { sym: 'ウ', eng: 'u' }, { sym: 'エ', eng: 'e' }, { sym: 'オ', eng: 'o' },
   { sym: 'カ', eng: 'ka' }, { sym: 'キ', eng: 'ki' }, { sym: 'ク', eng: 'ku' }, { sym: 'ケ', eng: 'ke' }, { sym: 'コ', eng: 'ko' },
   { sym: 'サ', eng: 'sa' }, { sym: 'シ', eng: 'shi' }, { sym: 'ス', eng: 'su' }, { sym: 'セ', eng: 'se' }, { sym: 'ソ', eng: 'so' },
@@ -23,7 +23,8 @@ const hiraKataArray = [
   { sym: 'マ', eng: 'ma' }, { sym: 'ミ', eng: 'mi' }, { sym: 'ム', eng: 'mu' }, { sym: 'メ', eng: 'me' }, { sym: 'モ', eng: 'mo' },
   { sym: 'ヤ', eng: 'ya' }, { sym: 'ユ', eng: 'yu' }, { sym: 'ヨ', eng: 'yo' },
   { sym: 'ラ', eng: 'ra' }, { sym: 'リ', eng: 'ri' }, { sym: 'ル', eng: 'ru' }, { sym: 'レ', eng: 're' }, { sym: 'ロ', eng: 'ro' },
-  { sym: 'ワ', eng: 'wa' }, { sym: 'ヲ', eng: 'wo' }, { sym: 'ン', eng: 'n' }];
+  { sym: 'ワ', eng: 'wa' }, { sym: 'ヲ', eng: 'wo' }, { sym: 'ン', eng: 'n' }
+];
 
 class easyPage extends Component {
 
@@ -32,18 +33,25 @@ class easyPage extends Component {
     this.state = {
       currentQuest: "",
       currentAns: "",
+      previousAns: null,
       userGuess: ""
     }
-  }
+  };
 
   pickSomething = () => {
+    console.log("PreviousAns: " + this.state.previousAns)
     let currentSym = hiraKataArray[Math.floor(Math.random() * hiraKataArray.length)];
     this.setState({
       currentQuest: currentSym.sym,
       currentAns: currentSym.eng
     });
+    if (this.state.currentAns === this.state.previousAns) {
+      // this.pickSomething();
+    }
     console.log(currentSym.sym);
     console.log(this.state);
+
+
   };
 
   handleInputChange = event => {
@@ -53,28 +61,35 @@ class easyPage extends Component {
     this.setState({
       [name]: value
     });
-  }
+  };
 
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit
     event.preventDefault();
-
+    // check answer
     if (this.state.userGuess === this.state.currentAns) {
       alert("congrats")
+      this.setState({
+        previousAns: this.state.userGuess
+      });
+      
+      //roll new flash card
       this.pickSomething();
     } else {
       alert("try again")
-    }
-    // Clear `this.state.firstName` and `this.state.lastName`
+    };
+
+    //clear input box
     this.setState({
       userGuess: ""
     });
-  
+
   };
 
+  //ensures card is drawn on page first load
   componentDidMount = () => {
     this.pickSomething();
-  }
+  };
 
   render() {
     return (
