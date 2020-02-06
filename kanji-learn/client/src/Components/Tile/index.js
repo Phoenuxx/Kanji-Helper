@@ -3,6 +3,15 @@ import React from 'react';
 export default function HiraTile(props) {
 
     return (
-        <div className={props.class + "tile"} id={props.id}>{props.question}</div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div className={props.class + " flip-card-front"} >{props.question}</div>
+                </div>
+                <div class="flip-card-back">
+                    <p>{props.hint}</p>
+                </div>
+            </div>
+        </div>
     )
 }

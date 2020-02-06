@@ -3,7 +3,7 @@ import Tile from '../Components/Tile';
 
 const kanjiArray = [
     //hiragana Chart
-      { sym: "何", eng: 'what', hira: 'nani' }
+    { sym: "何", eng: 'what', hira: 'nani' }
     , { sym: "家", eng: 'house', hira: 'ie' }
     , { sym: "木", eng: 'tree', hira: 'き' }
     , { sym: "森", eng: 'forest', hira: 'もり' }
@@ -73,7 +73,7 @@ const kanjiArray = [
     //   , { sym: "", eng: '', hira: '' }
     //   , { sym: "", eng: '', hira: '' }
     //   , { sym: "", eng: '', hira: '' }
- 
+
 ];
 
 
@@ -92,6 +92,10 @@ class interPage extends Component {
 
     pickSomething = () => {
         let currentSym = kanjiArray[Math.floor(Math.random() * kanjiArray.length)];
+        
+        //Reverts congratulatory text to hidden
+        document.getElementById("correct-guess").style.display = "none";
+
         this.setState({
             currentQuest: currentSym.sym,
             currentAns: currentSym.eng,
@@ -115,8 +119,11 @@ class interPage extends Component {
         event.preventDefault();
 
         if (this.state.userGuess.toLowerCase() === this.state.currentAns) {
-            alert(this.state.currentHira)
-            this.pickSomething();
+
+            document.getElementById("correct-guess").style.display = "block";
+            
+            //roll new flash card after 3 second delay
+            setTimeout(this.pickSomething, 3000);
         } else {
             alert("try again")
         }
@@ -136,18 +143,18 @@ class interPage extends Component {
             <div className="App container-fluid">
                 <div className="row">
                     <div className="col-3" />
-                    <h1 className="col-6 test">Intermediate</h1>
+                    <h1 className="col-6 center-col">Intermediate</h1>
                     <div className="col-3" />
                 </div>
                 <div className="row">
                     <div className="col-3" />
-                    <h2 className="col-6 test">Translate the Kanji to english!</h2>
+                    <h2 className="col-6 center-col">Translate the Kanji to english!</h2>
                     <div className="col-3" />
                 </div>
                 <div className="row">
                     <div className="col-3" />
-                    <div className="col-6 test">
-                        <Tile class="" id="tile" question={this.state.currentQuest}></Tile>
+                    <div className="col-6 center-col">
+                        <Tile question={this.state.currentQuest} hint={this.state.currentHira}></Tile>
                         {/* <User answer={this.state.currentAns} handleInputChange={this.answerComparison}/> */}
                         <input
                             value={this.state.userGuess}
@@ -158,6 +165,15 @@ class interPage extends Component {
                         <button onClick={this.handleFormSubmit}>Submit</button>
                     </div>
                     <div className="col-3" />
+                </div>
+                <div className="col-3" />
+                <div className="row">
+                <div className="col-3" />
+                <div className="col-6 center-col">
+                    <div>
+                        <h1 id="correct-guess">GOOD JOB!</h1>
+                    </div>
+                </div> 
                 </div>
             </div>);
     };

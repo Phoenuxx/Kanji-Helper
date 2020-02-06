@@ -33,7 +33,6 @@ class easyPage extends Component {
     this.state = {
       currentQuest: "",
       currentAns: "",
-      previousAns: null,
       userGuess: ""
     }
   };
@@ -41,17 +40,15 @@ class easyPage extends Component {
   pickSomething = () => {
     console.log("PreviousAns: " + this.state.previousAns)
     let currentSym = hiraKataArray[Math.floor(Math.random() * hiraKataArray.length)];
+
+    document.getElementById("correct-guess").style.visibility = "hidden";
+
     this.setState({
       currentQuest: currentSym.sym,
       currentAns: currentSym.eng
     });
-    if (this.state.currentAns === this.state.previousAns) {
-      // this.pickSomething();
-    }
     console.log(currentSym.sym);
     console.log(this.state);
-
-
   };
 
   handleInputChange = event => {
@@ -67,14 +64,11 @@ class easyPage extends Component {
     // Preventing the default behavior of the form submit
     event.preventDefault();
     // check answer
-    if (this.state.userGuess === this.state.currentAns) {
-      alert("congrats")
-      this.setState({
-        previousAns: this.state.userGuess
-      });
-      
-      //roll new flash card
-      this.pickSomething();
+    if (this.state.userGuess.toLowerCase() === this.state.currentAns) {
+
+      document.getElementById("correct-guess").style.visibility = "visible";
+      //roll new flash card after 3 second delay
+      setTimeout(this.pickSomething, 3000);
     } else {
       alert("try again")
     };
@@ -96,20 +90,20 @@ class easyPage extends Component {
       <div className="App container-fluid">
         <div className="row">
           <div className="col-3" />
-          <h1 className="col-6 test">Beginner</h1>
+          <h1 className="col-6 center-col">Beginner</h1>
           <div className="col-3" />
         </div>
         <div className="row">
           <div className="col-3" />
-          <h2 className="col-6 test">Type the sound for each Hiragana/Katakana that appears!</h2>
+          <h2 className="col-6 center-col">Type the sound for each Hiragana/Katakana that appears!</h2>
           <div className="col-3" />
         </div>
         <div className="row">
           <div className="col-3" />
-          <div className="col-6 test">
-            <Tile class="" id="tile" question={this.state.currentQuest}></Tile>
+          <div className="col-6 center-col">
+            <Tile question={this.state.currentQuest} hint={this.state.currentAns}></Tile>
             <input
-              value={this.state.userGuess.toLowerCase().trim()}
+              value={this.state.userGuess}
               name="userGuess"
               onChange={this.handleInputChange}
               type="text"
@@ -117,6 +111,14 @@ class easyPage extends Component {
             <button onClick={this.handleFormSubmit}>Submit</button>
           </div>
           <div className="col-3" />
+        </div>
+        <div className="row">
+          <div className="col-3" />
+          <div className="col-6 center-col">
+            <div>
+              <h1 id="correct-guess">GOOD JOB!</h1>
+            </div>
+          </div>
         </div>
       </div>);
   };
