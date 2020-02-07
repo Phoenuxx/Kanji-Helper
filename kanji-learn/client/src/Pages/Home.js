@@ -18,10 +18,10 @@ export default function homePage() {
         <div className="col-3" />
         <div className="col-6 center-col" >
           <div className="row" >
-            <DiffSelect class="diff-btn col-9 col-sm-8 col-md-7 col-lg-6 col-xl-5" src="/beginner" difficulty="Hiragana & Katakana" descript="Guess the sound of the shown Hiragana or Katakana" />
+            <DiffSelect class="diff-btn col-9 col-sm-8 col-md-7 col-lg-6 col-xl-5" src="/Kanji-Helper/#/beginner" difficulty="Hiragana & Katakana" descript="Guess the sound of the shown Hiragana or Katakana" />
           </div>
           <div className="row" >
-            <DiffSelect class="diff-btn col-9 col-sm-8 col-md-7 col-lg-6 col-xl-5" src="/Intermediate" difficulty="Medium" descript="Guess the Kanji's english meaning" />
+            <DiffSelect class="diff-btn col-9 col-sm-8 col-md-7 col-lg-6 col-xl-5" src="/Kanji-Helper/#/intermediate" difficulty="Medium" descript="Guess the Kanji's english meaning" />
           </div>
         </div>
         <div className="col-3" />
