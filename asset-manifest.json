@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Kanji-Helper/static/css/main.723df43d.chunk.css",
+    "main.js": "/Kanji-Helper/static/js/main.de383b65.chunk.js",
+    "main.js.map": "/Kanji-Helper/static/js/main.de383b65.chunk.js.map",
+    "runtime-main.js": "/Kanji-Helper/static/js/runtime-main.1a8840c0.js",
+    "runtime-main.js.map": "/Kanji-Helper/static/js/runtime-main.1a8840c0.js.map",
+    "static/js/2.237d962d.chunk.js": "/Kanji-Helper/static/js/2.237d962d.chunk.js",
+    "static/js/2.237d962d.chunk.js.map": "/Kanji-Helper/static/js/2.237d962d.chunk.js.map",
+    "index.html": "/Kanji-Helper/index.html",
+    "precache-manifest.d10f7cfec91f73a3becb4b51abb545d7.js": "/Kanji-Helper/precache-manifest.d10f7cfec91f73a3becb4b51abb545d7.js",
+    "service-worker.js": "/Kanji-Helper/service-worker.js",
+    "static/css/main.723df43d.chunk.css.map": "/Kanji-Helper/static/css/main.723df43d.chunk.css.map",
+    "static/js/2.237d962d.chunk.js.LICENSE": "/Kanji-Helper/static/js/2.237d962d.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1a8840c0.js",
+    "static/js/2.237d962d.chunk.js",
+    "static/css/main.723df43d.chunk.css",
+    "static/js/main.de383b65.chunk.js"
+  ]
+}
