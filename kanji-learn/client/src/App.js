@@ -10,8 +10,8 @@ function App() {
     <Router>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/Kanji-Helper/#/beginner' component={Easy} />
-          <Route exact path='/Kanji-Helper/#/intermediate' component={Int} />
+          <Route path='/beginner' component={Easy} />
+          <Route path='/intermediate' component={Int} />
         </Switch>
     </Router>
   );
