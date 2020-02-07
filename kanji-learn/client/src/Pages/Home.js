@@ -18,10 +18,10 @@ export default function homePage() {
         <div className="col-3" />
         <div className="col-6 center-col" >
           <div className="row" >
-            <DiffSelect class="diff-btn col-9 col-sm-8 col-md-7 col-lg-6 col-xl-5" src="/beginner" difficulty="Hiragana & Katakana" descript="Hiragana/Katakana - English" />
+            <DiffSelect class="diff-btn col-9 col-sm-8 col-md-7 col-lg-6 col-xl-5" src="/beginner" difficulty="Hiragana & Katakana" descript="Guess the sound of the shown Hiragana or Katakana" />
           </div>
           <div className="row" >
-            <DiffSelect class="diff-btn col-9 col-sm-8 col-md-7 col-lg-6 col-xl-5" src="/Intermediate" difficulty="Kanji" descript="K/H Words - English" />
+            <DiffSelect class="diff-btn col-9 col-sm-8 col-md-7 col-lg-6 col-xl-5" src="/Intermediate" difficulty="Medium" descript="Guess the Kanji's english meaning" />
           </div>
         </div>
         <div className="col-3" />
@@ -30,7 +30,10 @@ export default function homePage() {
         <div className="col-3" />
         <div className="center-col col-6">
           <h4>
-            This is a game designed to help in memorizing Japanese! From the basic Hiragana and Katakana to Kanji.
+            This is a game designed to help in memorizing Japanese! <br />
+            From the basic Hiragana and Katakana to Kanji.<br />
+            If you have trouble figuring one out, scroll over the <br />
+            flash card for the answer (For medium you get a hint through Hiragana)
       </h4>
           <div className="col-3" />
         </div>

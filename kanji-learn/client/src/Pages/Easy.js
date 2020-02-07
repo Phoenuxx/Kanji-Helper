@@ -41,7 +41,7 @@ class easyPage extends Component {
     console.log("PreviousAns: " + this.state.previousAns)
     let currentSym = hiraKataArray[Math.floor(Math.random() * hiraKataArray.length)];
 
-    document.getElementById("correct-guess").style.visibility = "hidden";
+    document.getElementById("correct-guess").style.display = "none";
 
     this.setState({
       currentQuest: currentSym.sym,
@@ -60,17 +60,22 @@ class easyPage extends Component {
     });
   };
 
+  incorrectHide = () => {
+    document.getElementById("incorrect-guess").style.display = "none"
+  }
+
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit
     event.preventDefault();
     // check answer
     if (this.state.userGuess.toLowerCase() === this.state.currentAns) {
 
-      document.getElementById("correct-guess").style.visibility = "visible";
+      document.getElementById("correct-guess").style.display = "block";
       //roll new flash card after 3 second delay
-      setTimeout(this.pickSomething, 3000);
+      setTimeout(this.pickSomething, 2000);
     } else {
-      alert("try again")
+      document.getElementById("incorrect-guess").style.display = "block";
+      setTimeout(this.incorrectHide, 1000);
     };
 
     //clear input box
@@ -95,32 +100,37 @@ class easyPage extends Component {
         </div>
         <div className="row">
           <div className="col-3" />
-          <h2 className="col-6 center-col">Type the sound for each Hiragana/Katakana that appears!</h2>
+          <h2 className="col-6 center-col">Type the sound for each Hiragana or Katakana that appears!</h2>
           <div className="col-3" />
         </div>
         <div className="row">
           <div className="col-3" />
           <div className="col-6 center-col">
             <Tile question={this.state.currentQuest} hint={this.state.currentAns}></Tile>
-            <input
-              value={this.state.userGuess}
-              name="userGuess"
-              onChange={this.handleInputChange}
-              type="text"
-            />
-            <button onClick={this.handleFormSubmit}>Submit</button>
-          </div>
-          <div className="col-3" />
-        </div>
-        <div className="row">
-          <div className="col-3" />
-          <div className="col-6 center-col">
-            <div>
-              <h1 id="correct-guess">GOOD JOB!</h1>
+            <div className="row">
+              <div className="col-12 center-col">
+                <input
+                  value={this.state.userGuess}
+                  name="userGuess"
+                  onChange={this.handleInputChange}
+                  type="text"
+                />
+                <button onClick={this.handleFormSubmit}>Submit</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>);
+        <div className="row">
+          <div className="col-3" />
+          <div className="col-6">
+            <div>
+              <div id="correct-guess">GOOD JOB!</div>
+              <div id="incorrect-guess">Oops, Try Again!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   };
 };
 
