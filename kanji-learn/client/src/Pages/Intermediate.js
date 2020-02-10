@@ -4,7 +4,7 @@ import Tile from '../Components/Tile';
 const kanjiArray = [
   //hiragana Chart
   { sym: "何", eng: 'what', hira: 'nani' }
-  , { sym: "家", eng: 'house', hira: 'ie' }
+  , { sym: "家", eng: 'house', hira: 'いえ ' }
   , { sym: "木", eng: 'tree', hira: 'き' }
   , { sym: "森", eng: 'forest', hira: 'もり' }
   , { sym: "緑", eng: 'green', hira: 'みどり' }

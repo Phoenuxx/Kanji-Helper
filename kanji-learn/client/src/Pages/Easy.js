@@ -7,12 +7,20 @@ const hiraKataArray = [
   { sym: 'か', eng: 'ka' }, { sym: 'き', eng: 'ki' }, { sym: 'く', eng: 'ku' }, { sym: 'け', eng: 'ke' }, { sym: 'こ', eng: 'ko' },
   { sym: 'さ', eng: 'sa' }, { sym: 'し', eng: 'shi' }, { sym: 'す', eng: 'su' }, { sym: 'せ', eng: 'se' }, { sym: 'そ', eng: 'so' },
   { sym: 'た', eng: 'ta' }, { sym: 'ち', eng: 'chi' }, { sym: 'つ', eng: 'tsu' }, { sym: 'て', eng: 'te' }, { sym: 'と', eng: 'to' },
-  { sym: 'な', eng: 'na' }, { sym: 'に', eng: 'ni' }, { sym: 'ぬ', eng: 'nu' }, { sym: 'ね', eng: 'ne' }, { sym: 'の', eng: 'nu' },
+  { sym: 'な', eng: 'na' }, { sym: 'に', eng: 'ni' }, { sym: 'ぬ', eng: 'nu' }, { sym: 'ね', eng: 'ne' }, { sym: 'の', eng: 'no' },
   { sym: 'は', eng: 'ha' }, { sym: 'ひ', eng: 'hi' }, { sym: 'ふ', eng: 'fu' }, { sym: 'へ', eng: 'he' }, { sym: 'ほ', eng: 'ho' },
   { sym: 'ま', eng: 'ma' }, { sym: 'み', eng: 'mi' }, { sym: 'む', eng: 'mu' }, { sym: 'め', eng: 'me' }, { sym: 'も', eng: 'mo' },
   { sym: 'や', eng: 'ya' }, { sym: 'ゆ', eng: 'yu' }, { sym: 'よ', eng: 'yo' },
   { sym: 'ら', eng: 'ra' }, { sym: 'り', eng: 'ri' }, { sym: 'る', eng: 'ru' }, { sym: 'れ', eng: 're' }, { sym: 'ろ', eng: 'ro' },
   { sym: 'わ', eng: 'wa' }, { sym: 'を', eng: 'wo' }, { sym: 'ん', eng: 'n' },
+  /*
+  { sym: 'か', eng: 'ga' }, { sym: 'き', eng: 'gi' }, { sym: 'く', eng: 'gu' }, { sym: 'け', eng: 'ge' }, { sym: 'こ', eng: 'go' },
+  { sym: 'さ', eng: 'za' }, { sym: 'し', eng: 'ji' }, { sym: 'す', eng: 'zu' }, { sym: 'せ', eng: 'ze' }, { sym: 'そ', eng: 'zo' },
+  { sym: 'た', eng: 'da' },                                                     { sym: 'て', eng: 'de' }, { sym: 'と', eng: 'do' },
+  { sym: 'は', eng: 'ba' }, { sym: 'ひ', eng: 'bi' }, { sym: 'ふ', eng: 'bu' }, { sym: 'へ', eng: 'be' }, { sym: 'ほ', eng: 'bo' },
+  { sym: 'は', eng: 'pa' }, { sym: 'ひ', eng: 'pi' }, { sym: 'ふ', eng: 'pu' }, { sym: 'へ', eng: 'pe' }, { sym: 'ほ', eng: 'po' },
+  */
+
   //katakana Chart
   { sym: 'ア', eng: 'a' }, { sym: 'イ', eng: 'i' }, { sym: 'ウ', eng: 'u' }, { sym: 'エ', eng: 'e' }, { sym: 'オ', eng: 'o' },
   { sym: 'カ', eng: 'ka' }, { sym: 'キ', eng: 'ki' }, { sym: 'ク', eng: 'ku' }, { sym: 'ケ', eng: 'ke' }, { sym: 'コ', eng: 'ko' },
@@ -24,6 +32,13 @@ const hiraKataArray = [
   { sym: 'ヤ', eng: 'ya' }, { sym: 'ユ', eng: 'yu' }, { sym: 'ヨ', eng: 'yo' },
   { sym: 'ラ', eng: 'ra' }, { sym: 'リ', eng: 'ri' }, { sym: 'ル', eng: 'ru' }, { sym: 'レ', eng: 're' }, { sym: 'ロ', eng: 'ro' },
   { sym: 'ワ', eng: 'wa' }, { sym: 'ヲ', eng: 'wo' }, { sym: 'ン', eng: 'n' }
+   /*
+  { sym: 'か', eng: 'ga' }, { sym: 'き', eng: 'gi' }, { sym: 'く', eng: 'gu' }, { sym: 'け', eng: 'ge' }, { sym: 'こ', eng: 'go' },
+  { sym: 'さ', eng: 'za' }, { sym: 'し', eng: 'ji' }, { sym: 'す', eng: 'zu' }, { sym: 'せ', eng: 'ze' }, { sym: 'そ', eng: 'zo' },
+  { sym: 'た', eng: 'da' },                                                     { sym: 'て', eng: 'de' }, { sym: 'と', eng: 'do' },
+  { sym: 'は', eng: 'ba' }, { sym: 'ひ', eng: 'bi' }, { sym: 'ふ', eng: 'bu' }, { sym: 'へ', eng: 'be' }, { sym: 'ほ', eng: 'bo' },
+  { sym: 'は', eng: 'pa' }, { sym: 'ひ', eng: 'pi' }, { sym: 'ふ', eng: 'pu' }, { sym: 'へ', eng: 'pe' }, { sym: 'ほ', eng: 'po' },
+  */
 ];
 
 class easyPage extends Component {
@@ -115,7 +130,7 @@ class easyPage extends Component {
                   onChange={this.handleInputChange}
                   type="text"
                 />
-                <button onClick={this.handleFormSubmit}>Submit</button>
+                <button onClick={this.handleFormSubmit} type="submit">Submit</button>
               </div>
             </div>
           </div>
