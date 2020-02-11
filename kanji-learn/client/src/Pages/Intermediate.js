@@ -63,15 +63,21 @@ const kanjiArray = [
   , { sym: "図書館 ", eng: 'library', hira: 'としょかん ' }
   , { sym: "火", eng: 'fire', hira: 'ひ' }
   , { sym: "禁止する", eng: 'prohibit', hira: 'きんしする' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
+  , { sym: "可愛い", eng: 'cute', hira: 'かわいい' }
+  , { sym: "彼氏 ", eng: 'boyfriend', hira: 'かれし' }
+  , { sym: "大学", eng: 'university', hira: 'だいがく' }
+  , { sym: "多い", eng: 'many', hira: 'おおい' }
+  , { sym: "荷物", eng: 'luggage', hira: 'にもつ' }
+  , { sym: "試験", eng: 'test', hira: 'しけん' }
+  , { sym: "床", eng: 'floor', hira: 'ゆか' }
+  , { sym: "遅い", eng: 'slow', hira: 'おそい' }
+  , { sym: "財布", eng: 'wallet', hira: 'さいふ' }
+  , { sym: "少し", eng: 'small quantity', hira: 'すこし' }
+  , { sym: "少ない", eng: 'not many', hira: 'すくない' }
+  , { sym: "宿題", eng: 'homework', hira: 'しゅくだい ' }
+  , { sym: "動物 ", eng: 'animal', hira: 'どうぶつ' }
+  , { sym: "動物園", eng: 'zoo', hira: 'どうぶつえん' }
+  //   , { sym: "", eng: '', hira: '' }  
   //   , { sym: "", eng: '', hira: '' }
 
 ];
@@ -102,6 +108,10 @@ class interPage extends Component {
     console.log(currentSym.sym);
     console.log(this.state);
   };
+
+  skipToNext = () => {
+    this.pickSomething();
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -166,7 +176,9 @@ class interPage extends Component {
                   onChange={this.handleInputChange}
                   type="text"
                 />
-                <button onClick={this.handleFormSubmit}>Submit</button>
+                <button onClick={this.handleFormSubmit} type="submit">Submit</button>
+                <br />
+                <button onClick={this.skipToNext}>Skip?</button>
               </div>
             </div>
           </div>

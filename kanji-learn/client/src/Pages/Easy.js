@@ -13,13 +13,11 @@ const hiraKataArray = [
   { sym: 'や', eng: 'ya' }, { sym: 'ゆ', eng: 'yu' }, { sym: 'よ', eng: 'yo' },
   { sym: 'ら', eng: 'ra' }, { sym: 'り', eng: 'ri' }, { sym: 'る', eng: 'ru' }, { sym: 'れ', eng: 're' }, { sym: 'ろ', eng: 'ro' },
   { sym: 'わ', eng: 'wa' }, { sym: 'を', eng: 'wo' }, { sym: 'ん', eng: 'n' },
-  /*
-  { sym: 'か', eng: 'ga' }, { sym: 'き', eng: 'gi' }, { sym: 'く', eng: 'gu' }, { sym: 'け', eng: 'ge' }, { sym: 'こ', eng: 'go' },
-  { sym: 'さ', eng: 'za' }, { sym: 'し', eng: 'ji' }, { sym: 'す', eng: 'zu' }, { sym: 'せ', eng: 'ze' }, { sym: 'そ', eng: 'zo' },
-  { sym: 'た', eng: 'da' },                                                     { sym: 'て', eng: 'de' }, { sym: 'と', eng: 'do' },
-  { sym: 'は', eng: 'ba' }, { sym: 'ひ', eng: 'bi' }, { sym: 'ふ', eng: 'bu' }, { sym: 'へ', eng: 'be' }, { sym: 'ほ', eng: 'bo' },
-  { sym: 'は', eng: 'pa' }, { sym: 'ひ', eng: 'pi' }, { sym: 'ふ', eng: 'pu' }, { sym: 'へ', eng: 'pe' }, { sym: 'ほ', eng: 'po' },
-  */
+  { sym: 'が', eng: 'ga' }, { sym: 'ぎ', eng: 'gi' }, { sym: 'ぐ', eng: 'gu' }, { sym: ' げ', eng: 'ge' }, { sym: 'ご', eng: 'go' },
+  { sym: 'ざ', eng: 'za' }, { sym: 'じ', eng: 'ji' }, { sym: 'ず', eng: 'zu' }, { sym: 'ぜ', eng: 'ze' }, { sym: 'ぞ', eng: 'zo' },
+  { sym: 'だ', eng: 'da' },                                                     { sym: 'で', eng: 'de' }, { sym: 'ど', eng: 'do' },
+  { sym: 'ば', eng: 'ba' }, { sym: 'び', eng: 'bi' }, { sym: 'ぶ', eng: 'bu' }, { sym: 'べ', eng: 'be' }, { sym: 'ぼ', eng: 'bo' },
+  { sym: 'ぱ', eng: 'pa' }, { sym: 'ぴ', eng: 'pi' }, { sym: 'ぷ', eng: 'pu' }, { sym: 'ぺ', eng: 'pe' }, { sym: 'ぽ', eng: 'po' },
 
   //katakana Chart
   { sym: 'ア', eng: 'a' }, { sym: 'イ', eng: 'i' }, { sym: 'ウ', eng: 'u' }, { sym: 'エ', eng: 'e' }, { sym: 'オ', eng: 'o' },
@@ -31,15 +29,13 @@ const hiraKataArray = [
   { sym: 'マ', eng: 'ma' }, { sym: 'ミ', eng: 'mi' }, { sym: 'ム', eng: 'mu' }, { sym: 'メ', eng: 'me' }, { sym: 'モ', eng: 'mo' },
   { sym: 'ヤ', eng: 'ya' }, { sym: 'ユ', eng: 'yu' }, { sym: 'ヨ', eng: 'yo' },
   { sym: 'ラ', eng: 'ra' }, { sym: 'リ', eng: 'ri' }, { sym: 'ル', eng: 'ru' }, { sym: 'レ', eng: 're' }, { sym: 'ロ', eng: 'ro' },
-  { sym: 'ワ', eng: 'wa' }, { sym: 'ヲ', eng: 'wo' }, { sym: 'ン', eng: 'n' }
-   /*
-  { sym: 'か', eng: 'ga' }, { sym: 'き', eng: 'gi' }, { sym: 'く', eng: 'gu' }, { sym: 'け', eng: 'ge' }, { sym: 'こ', eng: 'go' },
-  { sym: 'さ', eng: 'za' }, { sym: 'し', eng: 'ji' }, { sym: 'す', eng: 'zu' }, { sym: 'せ', eng: 'ze' }, { sym: 'そ', eng: 'zo' },
-  { sym: 'た', eng: 'da' },                                                     { sym: 'て', eng: 'de' }, { sym: 'と', eng: 'do' },
-  { sym: 'は', eng: 'ba' }, { sym: 'ひ', eng: 'bi' }, { sym: 'ふ', eng: 'bu' }, { sym: 'へ', eng: 'be' }, { sym: 'ほ', eng: 'bo' },
-  { sym: 'は', eng: 'pa' }, { sym: 'ひ', eng: 'pi' }, { sym: 'ふ', eng: 'pu' }, { sym: 'へ', eng: 'pe' }, { sym: 'ほ', eng: 'po' },
-  */
-];
+  { sym: 'ワ', eng: 'wa' }, { sym: 'ヲ', eng: 'wo' }, { sym: 'ン', eng: 'n' },
+  { sym: 'ガ', eng: 'ga' }, { sym: 'ギ', eng: 'gi' }, { sym: 'グ', eng: 'gu' }, { sym: 'ゲ', eng: 'ge' }, { sym: 'ゴ', eng: 'go' },
+  { sym: 'ザ', eng: 'za' }, { sym: 'ジ', eng: 'ji' }, { sym: 'ズ', eng: 'zu' }, { sym: 'ゼ', eng: 'ze' }, { sym: 'ゾ', eng: 'zo' },
+  { sym: 'ダ', eng: 'da' },                                                     { sym: 'デ', eng: 'de' }, { sym: 'ド', eng: 'do' },
+  { sym: 'バ', eng: 'ba' }, { sym: 'ビ', eng: 'bi' }, { sym: 'ブ', eng: 'bu' }, { sym: 'ベ', eng: 'be' }, { sym: 'ボ', eng: 'bo' },
+  { sym: 'パ', eng: 'pa' }, { sym: 'ピ', eng: 'pi' }, { sym: 'プ', eng: 'pu' }, { sym: 'ペ', eng: 'pe' }, { sym: 'ポ', eng: 'po' },
+  ];
 
 class easyPage extends Component {
 
@@ -53,7 +49,6 @@ class easyPage extends Component {
   };
 
   pickSomething = () => {
-    console.log("PreviousAns: " + this.state.previousAns)
     let currentSym = hiraKataArray[Math.floor(Math.random() * hiraKataArray.length)];
 
     document.getElementById("correct-guess").style.display = "none";
@@ -66,6 +61,11 @@ class easyPage extends Component {
     console.log(this.state);
   };
 
+  skipToNext = event=> {
+    event.preventDefault();
+    this.pickSomething();
+  }
+  
   handleInputChange = event => {
     const { name, value } = event.target;
 
@@ -131,6 +131,8 @@ class easyPage extends Component {
                   type="text"
                 />
                 <button onClick={this.handleFormSubmit} type="submit">Submit</button>
+                <br />
+                <button onClick={this.skipToNext}>Skip?</button>
               </div>
             </div>
           </div>
