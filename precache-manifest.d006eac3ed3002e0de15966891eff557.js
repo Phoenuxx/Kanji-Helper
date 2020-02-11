@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ddcaede60f92fd7ffc41e6f76314ceb8",
+    "revision": "42bf4a5caf6cd2964859bb05223b5548",
     "url": "/Kanji-Helper/index.html"
   },
   {
-    "revision": "22c70eb7dc1825150369",
-    "url": "/Kanji-Helper/static/css/main.723df43d.chunk.css"
+    "revision": "98f99c7d662c74fa7ecf",
+    "url": "/Kanji-Helper/static/css/main.74e6e02b.chunk.css"
   },
   {
     "revision": "951a5fdc3c91abcd3527",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Kanji-Helper/static/js/2.237d962d.chunk.js.LICENSE"
   },
   {
-    "revision": "22c70eb7dc1825150369",
-    "url": "/Kanji-Helper/static/js/main.b1d07c44.chunk.js"
+    "revision": "98f99c7d662c74fa7ecf",
+    "url": "/Kanji-Helper/static/js/main.03f8f28a.chunk.js"
   },
   {
     "revision": "09d641a019fe5ca05072",
