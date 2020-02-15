@@ -134,12 +134,13 @@ class interPage extends Component {
     }
   }
 
+  //randomly sets state for a flash card and ensures affirmation text is hidden
   pickSomething = () => {
     let currentSym = kanjiArray[Math.floor(Math.random() * kanjiArray.length)];
 
-    //Reverts congratulatory text to hidden
+    //Reverts affirmation text to hidden
     document.getElementById("correct-guess").style.display = "none";
-    document.getElementById("incorrect-guess").style.display = "none"
+    document.getElementById("incorrect-guess").style.display = "none";
 
     this.setState({
       currentQuest: currentSym.sym,
@@ -150,10 +151,12 @@ class interPage extends Component {
     console.log(this.state);
   };
 
+  //Plans to reveal correct answer before picking new card
   skipToNext = () => {
     this.pickSomething();
   }
 
+  //Plans to reveal correct answer before picking new card
   handleInputChange = event => {
     const { name, value } = event.target;
 
@@ -163,10 +166,12 @@ class interPage extends Component {
     });
   }
 
+  // function for hiding incorrect guess text
   incorrectHide = () => {
     document.getElementById("incorrect-guess").style.display = "none"
   }
 
+  // checks user answers and runs pick something
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit
     event.preventDefault();
@@ -188,6 +193,7 @@ class interPage extends Component {
 
   };
 
+  // ensures a flash card is chosen on page load
   componentDidMount = () => {
     this.pickSomething();
   }

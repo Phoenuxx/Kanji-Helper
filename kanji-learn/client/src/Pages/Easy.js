@@ -49,6 +49,7 @@ class easyPage extends Component {
     }
   };
 
+  //randomly sets state for a flash card and ensures affirmation text is hidden
   pickSomething = () => {
     let currentSym = hiraKataArray[Math.floor(Math.random() * hiraKataArray.length)];
 
@@ -62,11 +63,13 @@ class easyPage extends Component {
     console.log(this.state);
   };
 
+  //Plans to reveal correct answer before picking new card TODO
   skipToNext = event => {
     event.preventDefault();
     this.pickSomething();
   }
 
+  //Plans to reveal correct answer before picking new card
   handleInputChange = event => {
     const { name, value } = event.target;
 
@@ -76,10 +79,12 @@ class easyPage extends Component {
     });
   };
 
+    // function for hiding incorrect guess text
   incorrectHide = () => {
     document.getElementById("incorrect-guess").style.display = "none"
   }
 
+    // checks user answers and runs pick something
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit
     event.preventDefault();
