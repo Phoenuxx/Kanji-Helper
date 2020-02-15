@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tile from '../Components/Tile';
+import HomeBtn from '../Components/DifficultySelect';
 
 const hiraKataArray = [
   //hiragana Chart
@@ -15,7 +16,7 @@ const hiraKataArray = [
   { sym: 'わ', eng: 'wa' }, { sym: 'を', eng: 'wo' }, { sym: 'ん', eng: 'n' },
   { sym: 'が', eng: 'ga' }, { sym: 'ぎ', eng: 'gi' }, { sym: 'ぐ', eng: 'gu' }, { sym: ' げ', eng: 'ge' }, { sym: 'ご', eng: 'go' },
   { sym: 'ざ', eng: 'za' }, { sym: 'じ', eng: 'ji' }, { sym: 'ず', eng: 'zu' }, { sym: 'ぜ', eng: 'ze' }, { sym: 'ぞ', eng: 'zo' },
-  { sym: 'だ', eng: 'da' },                                                     { sym: 'で', eng: 'de' }, { sym: 'ど', eng: 'do' },
+  { sym: 'だ', eng: 'da' }, { sym: 'で', eng: 'de' }, { sym: 'ど', eng: 'do' },
   { sym: 'ば', eng: 'ba' }, { sym: 'び', eng: 'bi' }, { sym: 'ぶ', eng: 'bu' }, { sym: 'べ', eng: 'be' }, { sym: 'ぼ', eng: 'bo' },
   { sym: 'ぱ', eng: 'pa' }, { sym: 'ぴ', eng: 'pi' }, { sym: 'ぷ', eng: 'pu' }, { sym: 'ぺ', eng: 'pe' }, { sym: 'ぽ', eng: 'po' },
 
@@ -32,10 +33,10 @@ const hiraKataArray = [
   { sym: 'ワ', eng: 'wa' }, { sym: 'ヲ', eng: 'wo' }, { sym: 'ン', eng: 'n' },
   { sym: 'ガ', eng: 'ga' }, { sym: 'ギ', eng: 'gi' }, { sym: 'グ', eng: 'gu' }, { sym: 'ゲ', eng: 'ge' }, { sym: 'ゴ', eng: 'go' },
   { sym: 'ザ', eng: 'za' }, { sym: 'ジ', eng: 'ji' }, { sym: 'ズ', eng: 'zu' }, { sym: 'ゼ', eng: 'ze' }, { sym: 'ゾ', eng: 'zo' },
-  { sym: 'ダ', eng: 'da' },                                                     { sym: 'デ', eng: 'de' }, { sym: 'ド', eng: 'do' },
+  { sym: 'ダ', eng: 'da' }, { sym: 'デ', eng: 'de' }, { sym: 'ド', eng: 'do' },
   { sym: 'バ', eng: 'ba' }, { sym: 'ビ', eng: 'bi' }, { sym: 'ブ', eng: 'bu' }, { sym: 'ベ', eng: 'be' }, { sym: 'ボ', eng: 'bo' },
   { sym: 'パ', eng: 'pa' }, { sym: 'ピ', eng: 'pi' }, { sym: 'プ', eng: 'pu' }, { sym: 'ペ', eng: 'pe' }, { sym: 'ポ', eng: 'po' },
-  ];
+];
 
 class easyPage extends Component {
 
@@ -61,11 +62,11 @@ class easyPage extends Component {
     console.log(this.state);
   };
 
-  skipToNext = event=> {
+  skipToNext = event => {
     event.preventDefault();
     this.pickSomething();
   }
-  
+
   handleInputChange = event => {
     const { name, value } = event.target;
 
@@ -122,29 +123,31 @@ class easyPage extends Component {
           <div className="col-3" />
           <div className="col-6 center-col">
             <Tile question={this.state.currentQuest} hint={this.state.currentAns}></Tile>
-            <div className="row">
-              <div className="col-12 center-col">
-                <input
-                  value={this.state.userGuess}
-                  name="userGuess"
-                  onChange={this.handleInputChange}
-                  type="text"
-                />
-                <button onClick={this.handleFormSubmit} type="submit">Submit</button>
-                <br />
-                <button onClick={this.skipToNext}>Skip?</button>
-              </div>
-            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-3" />
+          <div className="col-6 center-col">
+            <input
+              value={this.state.userGuess}
+              name="userGuess"
+              onChange={this.handleInputChange}
+              type="text"
+            />
+            <button onClick={this.handleFormSubmit} type="submit">Submit</button>
+            <br />
+            <button onClick={this.skipToNext}>Skip?</button>
           </div>
         </div>
         <div className="row">
           <div className="col-3" />
           <div className="col-6">
-            <div>
-              <div id="correct-guess">GOOD JOB!</div>
-              <div id="incorrect-guess">Oops, Try Again!</div>
-            </div>
+            <h1 id="correct-guess">GOOD JOB!</h1>
+            <h1 id="incorrect-guess">Oops, Try Again!</h1>
           </div>
+        </div>
+        <div id="home-btn">
+          <HomeBtn class='diff-btn' src='#' difficulty='Home' />
         </div>
       </div>
     );

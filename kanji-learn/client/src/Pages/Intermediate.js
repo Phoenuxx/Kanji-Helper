@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tile from '../Components/Tile';
+import HomeBtn from '../Components/DifficultySelect';
 
 const kanjiArray = [
   //hiragana Chart
@@ -77,7 +78,47 @@ const kanjiArray = [
   , { sym: "宿題", eng: 'homework', hira: 'しゅくだい ' }
   , { sym: "動物 ", eng: 'animal', hira: 'どうぶつ' }
   , { sym: "動物園", eng: 'zoo', hira: 'どうぶつえん' }
-  //   , { sym: "", eng: '', hira: '' }  
+  , { sym: "一つ", eng: 'one item', hira: 'ひとつ' }
+  , { sym: "二つ", eng: 'two items', hira: 'ふたつ' }
+  , { sym: "三つ", eng: 'three items', hira: 'みっつ' }
+  , { sym: "四つ", eng: 'four items', hira: 'よっつ' }
+  , { sym: "五つ", eng: 'five items', hira: 'いつつ' }
+  , { sym: " 六つ", eng: 'six items', hira: 'むっつ' }
+  , { sym: "七つ", eng: 'seven items', hira: 'ななつ' }
+  , { sym: "八つ", eng: 'eight items', hira: 'やっつ' }
+  , { sym: "九つ", eng: 'nine items', hira: 'ここのつ' }
+  , { sym: "十", eng: 'ten items', hira: 'とお' }
+  , { sym: "毎日", eng: 'every day', hira: 'まいにち' }
+  , { sym: "毎週", eng: 'every week', hira: 'まいしゅう' }
+  , { sym: "毎月", eng: 'every month', hira: 'まいつき' }
+  , { sym: "毎年", eng: 'every year', hira: 'まいとし' }
+  , { sym: "電車", eng: 'train', hira: 'でんしゃ' }
+  , { sym: "ひこうき", eng: 'airplane', hira: 'ひこうき' }
+  , { sym: "自転車", eng: 'bicycle', hira: 'じてんしゃ' }
+  , { sym: "バス", eng: 'bus', hira: 'バス' }
+  , { sym: "タクシー", eng: 'taxi', hira: 'タクシー' }
+  , { sym: "地下鉄", eng: 'subway', hira: 'ちかてつ' }
+  , { sym: "船", eng: 'boat', hira: 'ふね' }
+  , { sym: "行きます", eng: 'to go', hira: 'いきます' }
+  , { sym: "行かない", eng: 'to not go', hira: 'いかない' }
+  , { sym: "来ます", eng: 'to come', hira: 'きます' }
+  , { sym: "来ません", eng: 'to not come', hira: 'きません' }
+  , { sym: "帰ります", eng: 'to return home', hira: 'かえります' }
+  , { sym: "帰りません", eng: 'to not return', hira: 'かえりません' }
+  , { sym: "病院", eng: 'hospital', hira: 'びょういん' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
   //   , { sym: "", eng: '', hira: '' }
 
 ];
@@ -168,32 +209,34 @@ class interPage extends Component {
           <div className="col-3" />
           <div className="col-6 center-col">
             <Tile question={this.state.currentQuest} hint={this.state.currentHira}></Tile>
-            <div className="row">
-              <div className="col-12 center-col">
-                <input
-                  value={this.state.userGuess}
-                  name="userGuess"
-                  onChange={this.handleInputChange}
-                  type="text"
-                />
-                <button onClick={this.handleFormSubmit} type="submit">Submit</button>
-                <br />
-                <button onClick={this.skipToNext}>Skip?</button>
-              </div>
-            </div>
           </div>
         </div>
-        <div className="col-3" />
+        <div className="row">
+          <div className="col-3" />
+          <div className="col-6 center-col">
+            <input
+              value={this.state.userGuess}
+              name="userGuess"
+              onChange={this.handleInputChange}
+              type="text"
+            />
+            <button onClick={this.handleFormSubmit} type="submit">Submit</button>
+            <br />
+            <button onClick={this.skipToNext}>Skip?</button>
+          </div>
+        </div>
         <div className="row">
           <div className="col-3" />
           <div className="col-6">
-            <div>
-              <h1 id="correct-guess">GOOD JOB!</h1>
-              <h1 id="incorrect-guess">Oops, Try Again!</h1>
-            </div>
+            <h1 id="correct-guess">GOOD JOB!</h1>
+            <h1 id="incorrect-guess">Oops, Try Again!</h1>
           </div>
         </div>
-      </div>);
+        <div id="home-btn">
+          <HomeBtn class='diff-btn' src='#' difficulty='Home' />
+        </div>
+      </div>
+    );
   };
 };
 

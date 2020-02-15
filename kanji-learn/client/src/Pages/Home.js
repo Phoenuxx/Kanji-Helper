@@ -38,5 +38,6 @@ export default function homePage() {
           <div className="col-3" />
         </div>
       </div>
-    </div>);
+    </div>
+  );
 }
