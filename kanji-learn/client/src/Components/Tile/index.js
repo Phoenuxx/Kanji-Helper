@@ -6,7 +6,7 @@ export default function HiraTile(props) {
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <div className={props.class + " flip-card-front"} >{props.question}</div>
+                    <div className=" flip-card-front" >{props.question}</div>
                 </div>
                 <div class="flip-card-back">
                     <p>{props.hint}</p>

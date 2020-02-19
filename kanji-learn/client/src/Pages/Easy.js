@@ -126,7 +126,7 @@ class easyPage extends Component {
         </div>
         <div className="row">
           <div className="col-3" />
-          <div className="col-6 center-col">
+          <div className="col-6 tile-col">
             <Tile question={this.state.currentQuest} hint={this.state.currentAns}></Tile>
           </div>
         </div>
