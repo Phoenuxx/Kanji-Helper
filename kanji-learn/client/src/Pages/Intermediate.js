@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import Tile from '../Components/Tile';
-import HomeBtn from '../Components/DifficultySelect';
+
 
 const kanjiArray = [
   //hiragana Chart
-  { sym: "何", eng: 'what', hira: 'nani' }
+    { sym: "何", eng: 'what', hira: 'なに' }
   , { sym: "家", eng: 'house', hira: 'いえ ' }
   , { sym: "木", eng: 'tree', hira: 'き' }
   , { sym: "森", eng: 'forest', hira: 'もり' }
   , { sym: "緑", eng: 'green', hira: 'みどり' }
   , { sym: "白", eng: 'white', hira: 'しろ' }
   , { sym: "黒", eng: 'black', hira: 'くろ' }
-  , { sym: "黄", eng: 'yellow', hira: 'き' }
+  , { sym: "黄", eng: 'yellow', hira: 'きいろ' }
   , { sym: "赤", eng: 'red', hira: 'あか' }
   , { sym: "青", eng: 'blue', hira: 'あお' }
   , { sym: "私", eng: 'i', hira: 'わたし' }
@@ -213,7 +213,7 @@ class interPage extends Component {
         </div>
         <div className="row">
           <div className="col-3" />
-          <div className="col-6 center-col">
+          <div className="col-6 tile-col">
             <Tile question={this.state.currentQuest} hint={this.state.currentHira}></Tile>
           </div>
         </div>
@@ -226,9 +226,10 @@ class interPage extends Component {
               onChange={this.handleInputChange}
               type="text"
             />
-            <button onClick={this.handleFormSubmit} type="submit">Submit</button>
             <br />
-            <button onClick={this.skipToNext}>Skip?</button>
+            <button onClick={this.handleFormSubmit} className="btn btn-success" type="submit">Submit</button>
+            <br />
+            <button onClick={this.skipToNext} className="btn btn-secondary">Skip?</button>
           </div>
         </div>
         <div className="row">
@@ -239,7 +240,7 @@ class interPage extends Component {
           </div>
         </div>
         <div id="home-btn">
-          <HomeBtn class='diff-btn' src='#' difficulty='Home' />
+        <a class="btn btn-info" href="#" role="button">Home</a>
         </div>
       </div>
     );

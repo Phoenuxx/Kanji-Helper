@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Tile from '../Components/Tile';
-import HomeBtn from '../Components/DifficultySelect';
+
 
 const hiraKataArray = [
   //hiragana Chart
@@ -79,12 +79,12 @@ class easyPage extends Component {
     });
   };
 
-    // function for hiding incorrect guess text
+  // function for hiding incorrect guess text
   incorrectHide = () => {
     document.getElementById("incorrect-guess").style.display = "none"
   }
 
-    // checks user answers and runs pick something
+  // checks user answers and runs pick something
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit
     event.preventDefault();
@@ -139,9 +139,10 @@ class easyPage extends Component {
               onChange={this.handleInputChange}
               type="text"
             />
-            <button onClick={this.handleFormSubmit} type="submit">Submit</button>
             <br />
-            <button onClick={this.skipToNext}>Skip?</button>
+            <button onClick={this.handleFormSubmit} className="btn btn-success" type="submit">Submit</button>
+            <br />
+            <button onClick={this.skipToNext} className="btn btn-secondary">Skip?</button>
           </div>
         </div>
         <div className="row">
@@ -152,7 +153,7 @@ class easyPage extends Component {
           </div>
         </div>
         <div id="home-btn">
-          <HomeBtn class='diff-btn' src='#' difficulty='Home' />
+        <a class="btn btn-info" href="#" role="button">Home</a>
         </div>
       </div>
     );
