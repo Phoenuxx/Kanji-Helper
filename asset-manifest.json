@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Kanji-Helper/static/css/main.ad916ed4.chunk.css",
-    "main.js": "/Kanji-Helper/static/js/main.125c6ae8.chunk.js",
-    "main.js.map": "/Kanji-Helper/static/js/main.125c6ae8.chunk.js.map",
+    "main.js": "/Kanji-Helper/static/js/main.8a33e52e.chunk.js",
+    "main.js.map": "/Kanji-Helper/static/js/main.8a33e52e.chunk.js.map",
     "runtime-main.js": "/Kanji-Helper/static/js/runtime-main.1a8840c0.js",
     "runtime-main.js.map": "/Kanji-Helper/static/js/runtime-main.1a8840c0.js.map",
     "static/js/2.237d962d.chunk.js": "/Kanji-Helper/static/js/2.237d962d.chunk.js",
     "static/js/2.237d962d.chunk.js.map": "/Kanji-Helper/static/js/2.237d962d.chunk.js.map",
     "index.html": "/Kanji-Helper/index.html",
-    "precache-manifest.5565b0243fd5663312fd3c323fab26e4.js": "/Kanji-Helper/precache-manifest.5565b0243fd5663312fd3c323fab26e4.js",
+    "precache-manifest.10a7751ebbefd88df5dd6399087195c7.js": "/Kanji-Helper/precache-manifest.10a7751ebbefd88df5dd6399087195c7.js",
     "service-worker.js": "/Kanji-Helper/service-worker.js",
     "static/css/main.ad916ed4.chunk.css.map": "/Kanji-Helper/static/css/main.ad916ed4.chunk.css.map",
     "static/js/2.237d962d.chunk.js.LICENSE": "/Kanji-Helper/static/js/2.237d962d.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.1a8840c0.js",
     "static/js/2.237d962d.chunk.js",
     "static/css/main.ad916ed4.chunk.css",
-    "static/js/main.125c6ae8.chunk.js"
+    "static/js/main.8a33e52e.chunk.js"
   ]
 }
