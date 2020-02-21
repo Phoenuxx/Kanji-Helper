@@ -28,7 +28,7 @@ const kanjiArray = [
   , { sym: "牛", eng: 'cow', hira: 'うし' }
   , { sym: "鳥", eng: 'bird', hira: 'とり' }
   , { sym: "肉", eng: 'meat', hira: 'にく' }
-  , { sym: "牛肉", eng: 'beef', hira: 'ぎょにく' }
+  , { sym: "牛肉", eng: 'beef', hira: 'ぎゅにく' }
   , { sym: "鳥肉", eng: 'chicken', hira: 'とりにく' }
   , { sym: "魚肉", eng: 'fish', hira: 'ぎょにく' }
   , { sym: "手", eng: 'hand', hira: 'て' }
@@ -87,7 +87,7 @@ const kanjiArray = [
   , { sym: "七つ", eng: 'seven items', hira: 'ななつ' }
   , { sym: "八つ", eng: 'eight items', hira: 'やっつ' }
   , { sym: "九つ", eng: 'nine items', hira: 'ここのつ' }
-  , { sym: "十", eng: 'ten items', hira: 'とお' }
+  , { sym: "十 (count)", eng: 'ten items', hira: 'とお' }
   , { sym: "毎日", eng: 'every day', hira: 'まいにち' }
   , { sym: "毎週", eng: 'every week', hira: 'まいしゅう' }
   , { sym: "毎月", eng: 'every month', hira: 'まいつき' }
@@ -106,6 +106,43 @@ const kanjiArray = [
   , { sym: "帰ります", eng: 'to return home', hira: 'かえります' }
   , { sym: "帰りません", eng: 'to not return', hira: 'かえりません' }
   , { sym: "病院", eng: 'hospital', hira: 'びょういん' }
+    , { sym: "雨", eng: 'rain', hira: 'あめ' }
+    , { sym: "円", eng: 'yen', hira: 'エン' }
+    , { sym: "下", eng: 'below', hira: 'した' }
+    , { sym: "花	", eng: 'flower', hira: 'はな' }
+    , { sym: "休", eng: 'rest', hira: 'やす-む' }
+    , { sym: "玉", eng: 'ball', hira: 'たま' }
+    , { sym: "空", eng: 'sky', hira: 'そら' }
+   , { sym: "月", eng: 'moon', hira: 'つき' }
+    , { sym: "見る", eng: 'see', hira: 'みる' }
+    , { sym: "耳", eng: 'ear', hira: 'みみ' }
+    , { sym: "小", eng: 'small', hira: 'ちい-さい' }
+    , { sym: "人", eng: 'person', hira: 'ひと' }
+    , { sym: "川", eng: 'river', hira: 'かわ' }
+    , { sym: "村", eng: 'village', hira: 'むら' }
+    , { sym: "大", eng: 'large', hira: 'おお-きい' }
+    , { sym: "日", eng: 'day', hira: 'ニチ' }
+    , { sym: "日曜日", eng: 'sunday', hira: 'にちよび' }
+    , { sym: "火曜日", eng: 'tuesday', hira: 'かよび' }
+    , { sym: "水曜日", eng: 'wednesday', hira: 'すいよび' }
+    , { sym: "木曜日", eng: 'thursday', hira: 'もくよび' }
+    , { sym: "金曜日", eng: 'friday', hira: 'きんよび' }
+    , { sym: "土曜日", eng: 'saturday', hira: 'どよび' }
+    , { sym: "月曜日", eng: 'monday', hira: 'げ つよび' }
+ //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
+  //   , { sym: "", eng: '', hira: '' }
   //   , { sym: "", eng: '', hira: '' }
   //   , { sym: "", eng: '', hira: '' }
   //   , { sym: "", eng: '', hira: '' }
@@ -235,7 +272,7 @@ class interPage extends Component {
         <div className="row">
           <div className="col-3" />
           <div className="col-6">
-            <h1 id="correct-guess">GOOD JOB!</h1>
+            <h1 id="correct-guess">GOOD JOB! </h1>
             <h1 id="incorrect-guess">Oops, Try Again!</h1>
           </div>
         </div>
