@@ -15,12 +15,6 @@ input, button {
   width: 100%;
 }
 
-#home-btn {
-  position: absolute;
-  bottom:5%;
-  right:5%;
-}
-
 .center-col {
   background-color: rgba(4, 4, 107, 0.671);
   border-style: solid;
@@ -45,7 +39,7 @@ input, button {
   text-align: center;
 }
 
-#correct-guess, #incorrect-guess {
+#correct-guess, #incorrect-guess, #skip {
   margin-top: 30px;
   display: none;
   background-color: rgba(4, 4, 107, 0.671);

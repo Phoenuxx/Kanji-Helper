@@ -4,7 +4,7 @@ import Tile from '../Components/Tile';
 
 const kanjiArray = [
   //hiragana Chart
-    { sym: "何", eng: 'what', hira: 'なに' }
+  { sym: "何", eng: 'what', hira: 'なに' }
   , { sym: "家", eng: 'house', hira: 'いえ ' }
   , { sym: "木", eng: 'tree', hira: 'き' }
   , { sym: "森", eng: 'forest', hira: 'もり' }
@@ -106,30 +106,30 @@ const kanjiArray = [
   , { sym: "帰ります", eng: 'to return home', hira: 'かえります' }
   , { sym: "帰りません", eng: 'to not return', hira: 'かえりません' }
   , { sym: "病院", eng: 'hospital', hira: 'びょういん' }
-    , { sym: "雨", eng: 'rain', hira: 'あめ' }
-    , { sym: "円", eng: 'yen', hira: 'エン' }
-    , { sym: "下", eng: 'below', hira: 'した' }
-    , { sym: "花	", eng: 'flower', hira: 'はな' }
-    , { sym: "休", eng: 'rest', hira: 'やす-む' }
-    , { sym: "玉", eng: 'ball', hira: 'たま' }
-    , { sym: "空", eng: 'sky', hira: 'そら' }
-   , { sym: "月", eng: 'moon', hira: 'つき' }
-    , { sym: "見る", eng: 'see', hira: 'みる' }
-    , { sym: "耳", eng: 'ear', hira: 'みみ' }
-    , { sym: "小", eng: 'small', hira: 'ちい-さい' }
-    , { sym: "人", eng: 'person', hira: 'ひと' }
-    , { sym: "川", eng: 'river', hira: 'かわ' }
-    , { sym: "村", eng: 'village', hira: 'むら' }
-    , { sym: "大", eng: 'large', hira: 'おお-きい' }
-    , { sym: "日", eng: 'day', hira: 'ニチ' }
-    , { sym: "日曜日", eng: 'sunday', hira: 'にちよび' }
-    , { sym: "火曜日", eng: 'tuesday', hira: 'かよび' }
-    , { sym: "水曜日", eng: 'wednesday', hira: 'すいよび' }
-    , { sym: "木曜日", eng: 'thursday', hira: 'もくよび' }
-    , { sym: "金曜日", eng: 'friday', hira: 'きんよび' }
-    , { sym: "土曜日", eng: 'saturday', hira: 'どよび' }
-    , { sym: "月曜日", eng: 'monday', hira: 'げ つよび' }
- //   , { sym: "", eng: '', hira: '' }
+  , { sym: "雨", eng: 'rain', hira: 'あめ' }
+  , { sym: "円", eng: 'yen', hira: 'エン' }
+  , { sym: "下", eng: 'below', hira: 'した' }
+  , { sym: "花	", eng: 'flower', hira: 'はな' }
+  , { sym: "休", eng: 'rest', hira: 'やす-む' }
+  , { sym: "玉", eng: 'ball', hira: 'たま' }
+  , { sym: "空", eng: 'sky', hira: 'そら' }
+  , { sym: "月", eng: 'moon', hira: 'つき' }
+  , { sym: "見る", eng: 'see', hira: 'みる' }
+  , { sym: "耳", eng: 'ear', hira: 'みみ' }
+  , { sym: "小", eng: 'small', hira: 'ちい-さい' }
+  , { sym: "人", eng: 'person', hira: 'ひと' }
+  , { sym: "川", eng: 'river', hira: 'かわ' }
+  , { sym: "村", eng: 'village', hira: 'むら' }
+  , { sym: "大", eng: 'large', hira: 'おお-きい' }
+  , { sym: "日", eng: 'day', hira: 'ニチ' }
+  , { sym: "日曜日", eng: 'sunday', hira: 'にちよび' }
+  , { sym: "火曜日", eng: 'tuesday', hira: 'かよび' }
+  , { sym: "水曜日", eng: 'wednesday', hira: 'すいよび' }
+  , { sym: "木曜日", eng: 'thursday', hira: 'もくよび' }
+  , { sym: "金曜日", eng: 'friday', hira: 'きんよび' }
+  , { sym: "土曜日", eng: 'saturday', hira: 'どよび' }
+  , { sym: "月曜日", eng: 'monday', hira: 'げ つよび' }
+  //   , { sym: "", eng: '', hira: '' }
   //   , { sym: "", eng: '', hira: '' }
   //   , { sym: "", eng: '', hira: '' }
   //   , { sym: "", eng: '', hira: '' }
@@ -178,6 +178,7 @@ class interPage extends Component {
     //Reverts affirmation text to hidden
     document.getElementById("correct-guess").style.display = "none";
     document.getElementById("incorrect-guess").style.display = "none";
+    document.getElementById("skip").style.display = "none";
 
     this.setState({
       currentQuest: currentSym.sym,
@@ -189,8 +190,10 @@ class interPage extends Component {
   };
 
   //Plans to reveal correct answer before picking new card
-  skipToNext = () => {
-    this.pickSomething();
+  skipToNext = event => {
+    event.preventDefault();
+    document.getElementById("skip").style.display = "block";
+    setTimeout(this.pickSomething, 2000);
   }
 
   //Plans to reveal correct answer before picking new card
@@ -223,7 +226,7 @@ class interPage extends Component {
       document.getElementById("incorrect-guess").style.display = "block";
       setTimeout(this.incorrectHide, 1000);
     }
-    // Clear `this.state.firstName` and `this.state.lastName`
+    // Clear `this.state.firstName` and `this.state.lastName` on submit
     this.setState({
       userGuess: ""
     });
@@ -238,6 +241,13 @@ class interPage extends Component {
   render() {
     return (
       <div className="App container-fluid">
+        <div className="row title">
+          <div className="col-3" />
+          <div className="center-col col-6">
+            <h1>Flash Japanese <a className="btn btn-success" href="#" role="button">Home</a></h1>
+          </div>
+          <div className="col-3" />
+        </div>
         <div className="row">
           <div className="col-3" />
           <h1 className="col-6 center-col" id="int-title">Medium</h1>
@@ -274,10 +284,8 @@ class interPage extends Component {
           <div className="col-6">
             <h1 id="correct-guess">GOOD JOB! </h1>
             <h1 id="incorrect-guess">Oops, Try Again!</h1>
+            <h1 id="skip">{this.state.currentAns}</h1>
           </div>
-        </div>
-        <div id="home-btn">
-        <a class="btn btn-info" href="#" role="button">Home</a>
         </div>
       </div>
     );

@@ -114,6 +114,13 @@ class easyPage extends Component {
   render() {
     return (
       <div className="App container-fluid">
+        <div className="row title">
+          <div className="col-3" />
+          <div className="center-col col-6">
+            <h1>Flash Japanese <a className="btn btn-success" href="#" role="button">Home</a></h1>
+          </div>
+          <div className="col-3" />
+        </div>
         <div className="row">
           <div className="col-3" />
           <h1 className="col-6 center-col">Beginner</h1>
@@ -151,9 +158,6 @@ class easyPage extends Component {
             <h1 id="correct-guess">GOOD JOB!</h1>
             <h1 id="incorrect-guess">Oops, Try Again!</h1>
           </div>
-        </div>
-        <div id="home-btn">
-        <a class="btn btn-info" href="#" role="button">Home</a>
         </div>
       </div>
     );
