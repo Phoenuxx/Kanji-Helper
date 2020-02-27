@@ -255,7 +255,11 @@ class interPage extends Component {
         </div>
         <div className="row">
           <div className="col-3" />
-          <h2 className="col-6 center-col">Translate the Kanji to english!</h2>
+          <div className="col-6 center-col">
+            <h2 className="">Type the sound for each Hiragana or Katakana that appears! </h2>
+            <br />
+            <h3>Scroll over or tap the Flashcard for a hint</h3>
+          </div>
           <div className="col-3" />
         </div>
         <div className="row">
@@ -283,7 +287,7 @@ class interPage extends Component {
           <div className="col-3" />
           <div className="col-6">
             <h1 id="correct-guess">GOOD JOB! </h1>
-            <h1 id="incorrect-guess">Oops, Try Again!</h1>
+            <h1 id="incorrect-guess">Try Again!</h1>
             <h1 id="skip">{this.state.currentAns}</h1>
           </div>
         </div>

@@ -128,7 +128,11 @@ class easyPage extends Component {
         </div>
         <div className="row">
           <div className="col-3" />
-          <h2 className="col-6 center-col">Type the sound for each Hiragana or Katakana that appears!</h2>
+          <div className="col-6 center-col">
+            <h2 className="">Type the sound for each Hiragana or Katakana that appears! </h2>
+            <br />
+            <h3>Scroll over or tap the Flashcard for a hint</h3>
+          </div>
           <div className="col-3" />
         </div>
         <div className="row">
