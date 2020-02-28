@@ -15,6 +15,14 @@ input, button {
   width: 100%;
 }
 
+#home-btn {
+  margin: 5px auto 5px auto;
+}
+
+/* #header {
+  margin-left: 20%;
+}  */
+
 .center-col {
   background-color: rgba(4, 4, 107, 0.671);
   border-style: solid;
@@ -98,3 +106,17 @@ input, button {
   color: black;
   transform: rotateY(180deg);
 }
+
+@media (max-width: 576px) { 
+  
+  .col-0 {
+    display: none;
+  }
+ }
+
+ @media (min-width: 576px) { 
+    #home-btn {
+    margin: 5px auto 5px -30px;
+  }
+
+ }

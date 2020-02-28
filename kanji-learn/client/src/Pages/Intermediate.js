@@ -129,6 +129,39 @@ const kanjiArray = [
   , { sym: "金曜日", eng: 'friday', hira: 'きんよび' }
   , { sym: "土曜日", eng: 'saturday', hira: 'どよび' }
   , { sym: "月曜日", eng: 'monday', hira: 'げ つよび' }
+  , { sym: "年", eng: 'year', hira: 'とし' }
+  , { sym: "中間", eng: 'middle', hira: 'ちゅかん' }
+  , { sym: "生", eng: 'life', hira: 'なま' }
+  , { sym: "子", eng: 'child', hira: 'こ' }
+  , { sym: "分", eng: 'minute', hira: 'ぶん' }
+  , { sym: "同じ", eng: 'same', hira: 'おなじ' }
+  , { sym: "今", eng: 'now', hira: 'いま' }
+  , { sym: "高", eng: 'expensive', hira: 'たか' }
+  , { sym: "金", eng: 'gold', hira: 'きん' }
+  , { sym: "時", eng: 'time', hira: 'じ' }
+  , { sym: "市", eng: 'city', hira: 'とし' }
+  , { sym: "力", eng: 'power', hira: 'ちから' }
+  , { sym: "ご飯", eng: 'rice', hira: 'ごはん' }
+  , { sym: "前", eng: 'before', hira: 'まえ' }
+  , { sym: "内", eng: 'inside', hira: 'うち' }
+  , { sym: "中に", eng: 'during', hira: 'ちゅに' }
+  , { sym: "間", eng: 'between', hira: 'あいだ' }
+  , { sym: "体", eng: 'body', hira: 'からだ' }
+  , { sym: "学", eng: 'to study', hira: 'がく' }
+  , { sym: "目", eng: 'eye', hira: 'め' }
+  , { sym: "新", eng: 'new', hira: 'しん' }
+  , { sym: "光", eng: 'light', hira: 'ひかり' }
+  , { sym: "方向", eng: 'direction', hira: 'ほこ' }
+  , { sym: "心", eng: 'heart', hira: 'こころ' }
+  , { sym: "反対", eng: 'opposite', hira: 'はんたい' }
+  , { sym: "主", eng: 'main', hira: 'おも' }
+  , { sym: "正し", eng: 'correct', hira: 'ただし' }
+  , { sym: "山", eng: 'mountain', hira: 'やま' }
+  , { sym: "入", eng: 'to enter', hira: 'いり' }
+  , { sym: "開", eng: 'to open', hira: 'ひらき' }
+  , { sym: "全て", eng: 'all', hira: 'すべて' }
+  , { sym: "問", eng: 'question', hira: 'とい' }
+  , { sym: "始める", eng: 'to start off', hira: 'はじめる' }
   //   , { sym: "", eng: '', hira: '' }
   //   , { sym: "", eng: '', hira: '' }
   //   , { sym: "", eng: '', hira: '' }
@@ -137,27 +170,6 @@ const kanjiArray = [
   //   , { sym: "", eng: '', hira: '' }
   //   , { sym: "", eng: '', hira: '' }
   //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-  //   , { sym: "", eng: '', hira: '' }
-
 ];
 
 class interPage extends Component {
@@ -241,36 +253,48 @@ class interPage extends Component {
   render() {
     return (
       <div className="App container-fluid">
-        <div className="row title">
-          <div className="col-3" />
-          <div className="center-col col-6">
-            <h1>Flash Japanese <a className="btn btn-success" href="#" role="button">Home</a></h1>
+         <div className="row title">
+          <div className="col-0 col-sm-3" />
+          <div className="center-col col-12 col-sm-6">
+            <div className="row">
+              <div className="col-12 col-sm-10">
+                <div className="row">
+                  <div className="col-0 col-sm-2" />
+                  <div className="col-12 col-sm-10">
+                    <h1 id="header">Flash Japanese </h1>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-sm-2">
+                <a className="btn btn-success" id="home-btn" href="#" role="button">Home</a>
+              </div>
+            </div>
           </div>
-          <div className="col-3" />
+          <div className="col-0 col-sm-3" />
         </div>
         <div className="row">
-          <div className="col-3" />
-          <h1 className="col-6 center-col" id="int-title">Medium</h1>
-          <div className="col-3" />
+          <div className="col-0 col-sm-3" />
+          <h1 className="center-col col-12 col-sm-6" id="int-title">Medium</h1>
+          <div className="col-0 col-sm-3" />
         </div>
         <div className="row">
-          <div className="col-3" />
-          <div className="col-6 center-col">
-            <h2 className="">Type the sound for each Hiragana or Katakana that appears! </h2>
+          <div className="col-0 col-sm-3" />
+          <div className="center-col col-12 col-sm-6">
+            <h2 className="">Translate the Kanji to English!</h2>
             <br />
             <h3>Scroll over or tap the Flashcard for a hint</h3>
           </div>
-          <div className="col-3" />
+          <div className="col-0 col-sm-3" />
         </div>
         <div className="row">
-          <div className="col-3" />
-          <div className="col-6 tile-col">
+          <div className="col-0 col-sm-3" />
+          <div className="col-12 col-sm-6 tile-col">
             <Tile question={this.state.currentQuest} hint={this.state.currentHira}></Tile>
           </div>
         </div>
         <div className="row">
-          <div className="col-3" />
-          <div className="col-6 center-col">
+          <div className="col-0 col-sm-3" />
+          <div className="center-col col-12 col-sm-6">
             <input
               value={this.state.userGuess}
               name="userGuess"
@@ -284,8 +308,8 @@ class interPage extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-3" />
-          <div className="col-6">
+          <div className="col-0 col-sm-3" />
+          <div className="col-12 col-sm-6">
             <h1 id="correct-guess">GOOD JOB! </h1>
             <h1 id="incorrect-guess">Try Again!</h1>
             <h1 id="skip">{this.state.currentAns}</h1>

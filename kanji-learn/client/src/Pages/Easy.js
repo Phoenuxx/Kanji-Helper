@@ -63,7 +63,7 @@ class easyPage extends Component {
     console.log(this.state);
   };
 
-  //Plans to reveal correct answer before picking new card TODO
+  //Skip to the next flash card
   skipToNext = event => {
     event.preventDefault();
     this.pickSomething();
@@ -115,35 +115,47 @@ class easyPage extends Component {
     return (
       <div className="App container-fluid">
         <div className="row title">
-          <div className="col-3" />
-          <div className="center-col col-6">
-            <h1>Flash Japanese <a className="btn btn-success" href="#" role="button">Home</a></h1>
+          <div className="col-0 col-sm-3" />
+          <div className="center-col col-12 col-sm-6">
+            <div className="row">
+              <div className="col-12 col-sm-10">
+                <div className="row">
+                  <div className="col-0 col-sm-2" />
+                  <div className="col-12 col-sm-10">
+                    <h1 id="header">Flash Japanese </h1>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-sm-2">
+                <a className="btn btn-success" id="home-btn" href="#" role="button">Home</a>
+              </div>
+            </div>
           </div>
-          <div className="col-3" />
+          <div className="col-0 col-sm-3" />
         </div>
         <div className="row">
-          <div className="col-3" />
-          <h1 className="col-6 center-col">Beginner</h1>
-          <div className="col-3" />
+          <div className="col-0 col-sm-3" />
+          <h1 className="center-col col-12 col-sm-6">Beginner</h1>
+          <div className="col-0 col-sm-3" />
         </div>
         <div className="row">
-          <div className="col-3" />
-          <div className="col-6 center-col">
+          <div className="col-0 col-sm-3" />
+          <div className="center-col col-12 col-sm-6">
             <h2 className="">Type the sound for each Hiragana or Katakana that appears! </h2>
             <br />
             <h3>Scroll over or tap the Flashcard for a hint</h3>
           </div>
-          <div className="col-3" />
+          <div className="col-0 col-sm-3" />
         </div>
         <div className="row">
-          <div className="col-3" />
-          <div className="col-6 tile-col">
+          <div className="col-0 col-sm-3" />
+          <div className="tile-col col-12 col-sm-6">
             <Tile question={this.state.currentQuest} hint={this.state.currentAns}></Tile>
           </div>
         </div>
         <div className="row">
-          <div className="col-3" />
-          <div className="col-6 center-col">
+          <div className="col-0 col-sm-3" />
+          <div className="center-col col-12 col-sm-6">
             <input
               value={this.state.userGuess}
               name="userGuess"
@@ -157,7 +169,7 @@ class easyPage extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-3" />
+          <div className="col-0 col-sm-3" />
           <div className="col-6">
             <h1 id="correct-guess">GOOD JOB!</h1>
             <h1 id="incorrect-guess">Oops, Try Again!</h1>
