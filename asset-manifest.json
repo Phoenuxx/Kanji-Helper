@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Kanji-Helper/static/css/main.9ea3a89d.chunk.css",
-    "main.js": "/Kanji-Helper/static/js/main.595f1932.chunk.js",
-    "main.js.map": "/Kanji-Helper/static/js/main.595f1932.chunk.js.map",
+    "main.css": "/Kanji-Helper/static/css/main.d0958397.chunk.css",
+    "main.js": "/Kanji-Helper/static/js/main.756868f6.chunk.js",
+    "main.js.map": "/Kanji-Helper/static/js/main.756868f6.chunk.js.map",
     "runtime-main.js": "/Kanji-Helper/static/js/runtime-main.1a8840c0.js",
     "runtime-main.js.map": "/Kanji-Helper/static/js/runtime-main.1a8840c0.js.map",
     "static/js/2.237d962d.chunk.js": "/Kanji-Helper/static/js/2.237d962d.chunk.js",
     "static/js/2.237d962d.chunk.js.map": "/Kanji-Helper/static/js/2.237d962d.chunk.js.map",
     "index.html": "/Kanji-Helper/index.html",
-    "precache-manifest.67289e2ff3a5c96060bbad747e823203.js": "/Kanji-Helper/precache-manifest.67289e2ff3a5c96060bbad747e823203.js",
+    "precache-manifest.83f2c98f7fe9d308f14d0dd43296ea47.js": "/Kanji-Helper/precache-manifest.83f2c98f7fe9d308f14d0dd43296ea47.js",
     "service-worker.js": "/Kanji-Helper/service-worker.js",
-    "static/css/main.9ea3a89d.chunk.css.map": "/Kanji-Helper/static/css/main.9ea3a89d.chunk.css.map",
+    "static/css/main.d0958397.chunk.css.map": "/Kanji-Helper/static/css/main.d0958397.chunk.css.map",
     "static/js/2.237d962d.chunk.js.LICENSE": "/Kanji-Helper/static/js/2.237d962d.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.1a8840c0.js",
     "static/js/2.237d962d.chunk.js",
-    "static/css/main.9ea3a89d.chunk.css",
-    "static/js/main.595f1932.chunk.js"
+    "static/css/main.d0958397.chunk.css",
+    "static/js/main.756868f6.chunk.js"
   ]
 }
